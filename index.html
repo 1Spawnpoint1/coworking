@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Review Moderation - Wildberries</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <header id="bar">
+        <a href="index.html" class="brand">
+            <span>WILDBERRIES</span>
+            <span>WILDBERRIES</span>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span>Home</span>
+                        <span><ion-icon name="home-outline"></ion-icon></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reviews.html">
+                        <span>Reviews</span>
+                        <span><ion-icon name="document-text-outline"></ion-icon></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span>Dashboard</span>
+                        <span><ion-icon name="analytics-outline"></ion-icon></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="home-section">
+        <div class="home-container">
+            <div class="home-header">
+                <h2>AI Review Moderation System</h2>
+                <p>Advanced machine learning for detecting inappropriate content in Russian-language reviews</p>
+            </div>
+
+            <div class="home-overview">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <ion-icon name="shield-checkmark-outline"></ion-icon>
+                    </div>
+                    <div class="overview-content">
+                        <h3>Model Performance</h3>
+                        <div class="overview-stats">
+                            <div class="stat">
+                                <span class="stat-value">94.2%</span>
+                                <span class="stat-label">Accuracy</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">92.8%</span>
+                                <span class="stat-label">F1-Score</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">93.5%</span>
+                                <span class="stat-label">Precision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <ion-icon name="document-text-outline"></ion-icon>
+                    </div>
+                    <div class="overview-content">
+                        <h3>Reviews Analyzed</h3>
+                        <div class="overview-stats">
+                            <div class="stat">
+                                <span class="stat-value">15,728</span>
+                                <span class="stat-label">Total Reviews</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1,254</span>
+                                <span class="stat-label">Flagged Reviews</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">8.0%</span>
+                                <span class="stat-label">Flag Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-charts">
+                <div class="chart-card">
+                    <h3>How It Works</h3>
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Text Input</h4>
+                                <p>Russian-language reviews are processed through our NLP pipeline</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>BERT Analysis</h4>
+                                <p>Transformer model analyzes semantic meaning and context</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Classification</h4>
+                                <p>Neural network detects inappropriate content with high accuracy</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Result</h4>
+                                <p>Reviews are flagged for moderation or approved automatically</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Model Architecture</h3>
+                    <div class="architecture-diagram">
+                        <div class="arch-layer">
+                            <span class="layer-name">Input Layer</span>
+                            <span class="layer-desc">Russian Text</span>
+                        </div>
+                        <div class="arch-arrow">↓</div>
+                        <div class="arch-layer">
+                            <span class="layer-name">BERT Embedding</span>
+                            <span class="layer-desc">120K Vocabulary</span>
+                        </div>
+                        <div class="arch-arrow">↓</div>
+                        <div class="arch-layer">
+                            <span class="layer-name">Transformer</span>
+                            <span class="layer-desc">12 Layers</span>
+                        </div>
+                        <div class="arch-arrow">↓</div>
+                        <div class="arch-layer">
+                            <span class="layer-name">Classification</span>
+                            <span class="layer-desc">Binary Output</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-details">
+                <div class="details-card">
+                    <h3>Key Features</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <ion-icon name="language-outline" class="feature-icon"></ion-icon>
+                            <div class="feature-content">
+                                <h4>Russian NLP</h4>
+                                <p>Specialized for Russian language nuances and colloquial expressions</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <ion-icon name="flash-outline" class="feature-icon"></ion-icon>
+                            <div class="feature-content">
+                                <h4>Real-time Processing</h4>
+                                <p>Average response time of 120ms per review</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <ion-icon name="stats-chart-outline" class="feature-icon"></ion-icon>
+                            <div class="feature-content">
+                                <h4>High Accuracy</h4>
+                                <p>94.2% accuracy in detecting inappropriate content</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <ion-icon name="settings-outline" class="feature-icon"></ion-icon>
+                            <div class="feature-content">
+                                <h4>Customizable</h4>
+                                <p>Adjustable sensitivity thresholds for different use cases</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details-card">
+                    <h3>Technical Specifications</h3>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Base Model</span>
+                            <span class="spec-value">BERT-base Russian</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Training Data</span>
+                            <span class="spec-value">50,000 reviews</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Vocabulary</span>
+                            <span class="spec-value">120,000 tokens</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Parameters</span>
+                            <span class="spec-value">110 million</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Response Time</span>
+                            <span class="spec-value">~120ms</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Last Updated</span>
+                            <span class="spec-value">2023-09-28</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-actions">
+                <div class="action-card">
+                    <h3>Ready to Get Started?</h3>
+                    <p>Explore the dashboard to see the AI model in action</p>
+                    <div class="action-buttons">
+                        <a href="6.html" class="action-btn primary">
+                            <span>View Dashboard</span>
+                            <ion-icon name="analytics-outline"></ion-icon>
+                        </a>
+                        <a href="5.html" class="action-btn secondary">
+                            <span>Manage Reviews</span>
+                            <ion-icon name="document-text-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="wrapper">
+            <div class="footer_wrapper_year">
+                <div class="footer_wrapper_year_copy"><span class="footer_wrapper_year_inter">&copy;</span></div>
+                <div class="footer_wrapper_year_2023"><span class="footer_wrapper_year_inter">2025</span></div>
+                <div class="footer_wrapper_year_github"><a href="https://github.com/1Spawnpoint1/hackaton.git" target="_blank"><span class="footer_wrapper_year_inter">github</span></a></div>
+            </div>
+            <div class="footer_wrapper_icons">
+                <div class="footer_wrapper_icons_ico">
+                    <a href="https://www.instagram.com/wildberriesru/" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </div>
+                <div class="footer_wrapper_icons_ico">
+                    <a href="https://www.wildberries.by" target="_blank">
+                        <ion-icon name="globe-outline"></ion-icon>
+                    </a>
+                </div>
+                <div class="footer_wrapper_icons_ico">
+                    <a href="https://t.me/s/wildberriesru_official" target="_blank">
+                        <ion-icon name="paper-plane-outline"></ion-icon>
+                    </a>
+                </div>
+                <div class="footer_wrapper_icons_ico">
+                    <a href="https://ru.pinterest.com/" target="_blank">
+                        <ion-icon name="logo-pinterest"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

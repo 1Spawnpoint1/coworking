@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Moderation Dashboard</title>
+    <link rel="stylesheet" href="style6.css">
+    <!-- Исправленная ссылка -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <header id="bar">
+        <a href="index.html" class="brand">
+            <!-- Исправленная ссылка -->
+            <span>WILDBERRIES</span>
+            <span>WILDBERRIES</span>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span>Home</span>
+                        <span><ion-icon name="home-outline"></ion-icon></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reviews.html">
+                        <span>Reviews</span>
+                        <span><ion-icon name="document-text-outline"></ion-icon></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span>Dashboard</span>
+                        <span><ion-icon name="analytics-outline"></ion-icon></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-section">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <h2>Review Moderation Dashboard</h2>
+                <p>AI-powered profanity detection for Russian-language reviews</p>
+            </div>
+
+            <div class="dashboard-overview">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <ion-icon name="analytics-outline"></ion-icon>
+                    </div>
+                    <div class="overview-content">
+                        <h3>Model Performance</h3>
+                        <div class="overview-stats">
+                            <div class="stat">
+                                <span class="stat-value">94.2%</span>
+                                <span class="stat-label">Accuracy</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">92.8%</span>
+                                <span class="stat-label">F1-Score</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">93.5%</span>
+                                <span class="stat-label">Precision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <ion-icon name="document-text-outline"></ion-icon>
+                    </div>
+                    <div class="overview-content">
+                        <h3>Reviews Analyzed</h3>
+                        <div class="overview-stats">
+                            <div class="stat">
+                                <span class="stat-value">15,728</span>
+                                <!-- Исправлено число -->
+                                <span class="stat-label">Total Reviews</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1,254</span>
+                                <span class="stat-label">Flagged Reviews</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">8.0%</span>
+                                <span class="stat-label">Flag Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-charts">
+                <div class="chart-card">
+                    <h3>Review Classification Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="classificationChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Model Performance Metrics</h3>
+                    <div class="chart-container">
+                        <canvas id="metricsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Profanity Detection Over Time</h3>
+                    <div class="chart-container">
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Confusion Matrix</h3>
+                    <div class="chart-container">
+                        <canvas id="confusionMatrix"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-details">
+                <div class="details-card">
+                    <h3>Recent Flagged Reviews</h3>
+                    <div class="reviews-list">
+                        <div class="review-item flagged">
+                            <div class="review-content">
+                                <p>"Этот товар просто ужасен! Полный отстой и брак. Не советую никому!"</p>
+                                <span class="review-date">2025-10-15</span>
+                            </div>
+                            <div class="review-actions">
+                                <button class="action-btn confirm">Confirm</button>
+                                <button class="action-btn dismiss">Dismiss</button>
+                            </div>
+                        </div>
+                        <div class="review-item flagged">
+                            <div class="review-content">
+                                <p>"Качество оставляет желать лучшего. Продукт не соответствует описанию."</p>
+                                <span class="review-date">2025-10-14</span>
+                            </div>
+                            <div class="review-actions">
+                                <button class="action-btn confirm">Confirm</button>
+                                <button class="action-btn dismiss">Dismiss</button>
+                            </div>
+                        </div>
+                        <div class="review-item clean">
+                            <div class="review-content">
+                                <p>"Отличный товар! Быстрая доставка, все соответствует описанию. Рекомендую!"</p>
+                                <span class="review-date">2025-10-13</span>
+                            </div>
+                            <div class="review-actions">
+                                <span class="status-clean">Clean</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details-card">
+                    <h3>Model Information</h3>
+                    <div class="model-info">
+                        <div class="info-item">
+                            <span class="info-label">Algorithm:</span>
+                            <span class="info-value">BERT-based Transformer</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Training Data:</span>
+                            <span class="info-value">50,000 Russian reviews</span>
+                            <!-- Исправлено число -->
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Vocabulary Size:</span>
+                            <span class="info-value">120,000 tokens</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Last Updated:</span>
+                            <span class="info-value">2025-09-28</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Response Time:</span>
+                            <span class="info-value">~120ms per review</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="wrapper">
+            <div class="footer_wrapper_year">
+                <div class="footer_wrapper_year_copy"><span class="footer_wrapper_year_inter">&copy;</span></div>
+                <div class="footer_wrapper_year_2023"><span class="footer_wrapper_year_inter">2025</span></div>
+                <div class="footer_wrapper_year_github"><a href="https://github.com/1Spawnpoint1/hackaton.git" target="_blank"><span class="footer_wrapper_year_inter">github</span></a></div>
+            </div>
+            <div class="footer_wrapper_icons">
+                <div class="footer_wrapper_icons_ico">
+                    <a href="https://www.instagram.com/wildberriesru/" target="_blank"><img src="inst.svg" alt="Instagram"></a>
+                </div>
+                <div class="footer_wrapper_icons_ico">
+                    <a href="https://www.wildberries.by" target="_blank"><img src="Wildberries SVG Icon (1).svg" alt="Wildberries"></a>
+                </div>
+                <div class="footer_wrapper_icons_ico">
+                    <a href="https://t.me/s/wildberriesru_official" target="_blank"><img src="photo_2025-09-27_23-14-51.jpg" alt="Telegram"></a>
+                </div>
+                <div class="footer_wrapper_icons_ico">
+                    <a href="https://ru.pinterest.com/" target="_blank"><img src="pinterest.svg" alt="Pinterest"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

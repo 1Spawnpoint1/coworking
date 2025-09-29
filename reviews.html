@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WBmoderationreviews</title>
+    <link rel="shortcut icon" href="wb.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style5.css">
+</head>
+
+<body>
+    <header id="bar">
+        <a href="index.html" class="brand">
+            <span>WILDBERRIES</span>
+            <span>WILDBERRIES</span>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span>Home</span>
+                        <span><ion-icon name="home-outline"></ion-icon></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reviews.html">
+                        <span>Reviews</span>
+                        <span><ion-icon name="document-text-outline"></ion-icon></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span>Dashboard</span>
+                        <span><ion-icon name="analytics-outline"></ion-icon></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Секция CSV Processor -->
+        <section class="csv-section">
+            <div class="csv-container">
+                <div class="csv-header">
+                    <h2>Analyzing Reviews</h2>
+                    <p>Upload CSV file for analyze reviews</p>
+                </div>
+
+                <div class="csv-upload-card">
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="csvFile" accept=".csv" class="file-input">
+                        <div class="upload-content">
+                            <div class="upload-icon">
+                                <img src="csv_icon.png" alt="csv_icon">
+                            </div>
+                            <h3>Drag and drop a CSV file here</h3>
+                            <p>or click to select a file</p>
+                        </div>
+                    </div>
+
+                    <div id="fileInfo" class="file-info hidden">
+                        <div class="file-details">
+                            <span class="file-name" id="fileName"></span>
+                            <span class="file-size" id="fileSize"></span>
+                        </div>
+                        <button class="remove-file" id="removeFile">×</button>
+                    </div>
+                </div>
+
+                <div class="csv-process-section">
+                    <button id="processBtn" class="process-btn" disabled>
+                        <span class="btn-spinner hidden"></span>
+                        <span class="btn-text">Analyze the answers</span>
+                    </button>
+                    <div id="progressContainer" class="progress-container hidden">
+                        <div class="progress-bar">
+                            <div id="progressBarFill" class="progress-bar-fill"></div>
+                        </div>
+                        <div id="progressStatus" class="progress-status">Waiting for upload...</div>
+                    </div>
+                </div>
+
+                <div id="resultCard" class="csv-result-card hidden">
+                    <div class="result-header">
+                        <h3>✅ Analysis complete</h3>
+                    </div>
+                    <div class="result-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="processedRows">0</span>
+                            <span class="stat-label">reviews processed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="positiveReviews">0</span>
+                            <span class="stat-label">positive</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="negativeReviews">0</span>
+                            <span class="stat-label">negative</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="processingTime">0</span>
+                            <span class="stat-label">second(s)</span>
+                        </div>
+                    </div>
+
+                    <div class="result-actions">
+                        <button id="downloadBtn" class="download-btn">
+                            <ion-icon name="download-outline"></ion-icon>
+                            Download result
+                        </button>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="error-message hidden">
+                    <div class="error-icon">⚠️</div>
+                    <div class="error-text" id="errorText"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer" id="footer">
+            <div class="wrapper">
+                <div class="footer_wrapper_year">
+                    <div class="footer_wrapper_year_copy"><span class="footer_wrapper_year_inter">&copy;</span></div>
+                    <div class="footer_wrapper_year_2023"><span class="footer_wrapper_year_inter">2025</span></div>
+                    <div class="footer_wrapper_year_github"><a href="https://github.com/1Spawnpoint1/hackaton.git" target="_blank"><span class="footer_wrapper_year_inter">github</span></a></div>
+                </div>
+                <div class="footer_wrapper_icons">
+                    <div class="footer_wrapper_icons_ico">
+                        <a href="https://www.instagram.com/wildberriesru/" target="_blank"><img src="inst.svg" alt="inst 1"></a>
+                    </div>
+                    <div class="footer_wrapper_icons_ico">
+                        <a href="https://www.wildberries.by" target="_blank"><img src="Wildberries SVG Icon (1).svg" alt="fb 1"></a>
+                    </div>
+                    <div class="footer_wrapper_icons_ico">
+                        <a href="https://t.me/s/wildberriesru_official" target="_blank"><img src="photo_2025-09-27_23-14-51.jpg" alt="tw 1"></a>
+                    </div>
+                    <div class="footer_wrapper_icons_ico">
+                        <a href="https://ru.pinterest.com/" target="_blank"><img src="pinterest.svg" alt="pinterest 1"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="script.js"></script>
+    </main>
+</body>
+
+</html>

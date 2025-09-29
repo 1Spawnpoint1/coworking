@@ -1,0 +1,633 @@
+/* style5.css - Updated to match Home and Dashboard styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    min-height: 100vh;
+    color: #fff;
+}
+
+
+/* Header styles */
+
+header {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 80px;
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0 50px;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+}
+
+ul {
+    display: flex;
+    gap: 10px;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li:hover {
+    transform: translateY(-2px);
+}
+
+ul li a {
+    position: relative;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+ul li a:hover {
+    background: rgba(139, 92, 246, 0.2);
+    color: #8b5cf6;
+}
+
+.icon ul li a {
+    color: #fff;
+}
+
+.icon ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+ul li a span {
+    transition: all 0.4s ease;
+}
+
+.icon ul li a span:nth-child(2) {
+    transform: translateY(-10px);
+}
+
+.icon ul li a span:nth-child(1) {
+    transform: translateY(-30px);
+}
+
+.brand {
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.brand:hover {
+    transform: scale(1.05);
+}
+
+.brand span {
+    transition: all 0.5s ease;
+    display: block;
+}
+
+.brand span:nth-child(1) {
+    position: absolute;
+    transform: translateY(-80px);
+    font-size: 28px;
+}
+
+.icon .brand span:nth-child(2) {
+    transform: translateY(35px);
+}
+
+.icon .brand span:nth-child(1) {
+    transform: translateY(0px);
+    color: #fff;
+}
+
+
+/* CSV Section Styles */
+
+.csv-section {
+    margin-top: 100px;
+    padding: 40px 20px;
+    min-height: calc(100vh - 230px);
+}
+
+.csv-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.csv-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.csv-header h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.csv-header p {
+    color: #ccc;
+    font-size: 18px;
+}
+
+.csv-upload-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.upload-area {
+    border: 3px dashed #8b5cf6;
+    border-radius: 15px;
+    padding: 60px 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(139, 92, 246, 0.05);
+    text-align: center;
+    position: relative;
+}
+
+.upload-area:hover {
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+.upload-area.dragover {
+    border-color: #4f46e5;
+    background: rgba(79, 70, 229, 0.2);
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-content {
+    pointer-events: none;
+}
+
+.upload-content h3 {
+    color: #8b5cf6;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.upload-content p {
+    color: #ccc;
+    font-size: 16px;
+    margin: 0;
+}
+
+.upload-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: #8b5cf6;
+}
+
+.upload-icon img {
+    width: 64px;
+    height: 64px;
+    filter: brightness(0) saturate(100%) invert(39%) sepia(91%) saturate(1233%) hue-rotate(232deg) brightness(97%) contrast(96%);
+}
+
+.file-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+.file-details {
+    flex: 1;
+    text-align: left;
+}
+
+.file-name {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+}
+
+.file-size {
+    font-size: 14px;
+    color: #e0e7ff;
+}
+
+.remove-file {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.remove-file:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.csv-process-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.process-btn {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: white;
+    border: none;
+    padding: 20px 50px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 250px;
+    justify-content: center;
+}
+
+.process-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+.process-btn:disabled {
+    background: #a5b4fc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid transparent;
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.progress-container {
+    margin-top: 20px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    border-radius: inherit;
+    transition: width 0.2s ease;
+}
+
+.progress-status {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #dbeafe;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.csv-result-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.5s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-header h3 {
+    color: #10b981;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.result-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.stat-value {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #8b5cf6;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+.error-message {
+    background: #fef2f2;
+    border: 2px solid #fecaca;
+    color: #dc2626;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    animation: slideDown 0.3s ease;
+    margin-top: 20px;
+}
+
+.error-icon {
+    font-size: 24px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Footer styles */
+
+.footer {
+    width: 100vw;
+    height: 130px;
+    background: rgba(30, 30, 30, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer .wrapper {
+    width: 1222px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer_wrapper_year {
+    width: 182px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer_wrapper_icons {
+    width: 188px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer_wrapper_year_inter {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+}
+
+.footer_wrapper_year_copy {
+    width: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_wrapper_year_2023 {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_wrapper_year_github {
+    width: 60px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_wrapper_year_github a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer_wrapper_year_github a:hover {
+    color: #8b5cf6;
+}
+
+.footer_wrapper_icons_ico {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(139, 92, 246, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.footer_wrapper_icons_ico:hover {
+    background: rgba(139, 92, 246, 0.3);
+    transform: scale(1.1);
+}
+
+.footer_wrapper_icons_ico a {
+    color: #8b5cf6;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer_wrapper_icons_ico img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) saturate(100%) invert(39%) sepia(91%) saturate(1233%) hue-rotate(232deg) brightness(97%) contrast(96%);
+}
+
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+    .csv-section {
+        margin-top: 80px;
+        padding: 20px 10px;
+    }
+    .csv-header h2 {
+        font-size: 36px;
+    }
+    .csv-upload-card {
+        padding: 20px;
+    }
+    .upload-area {
+        padding: 40px 20px;
+    }
+    .upload-content h3 {
+        font-size: 20px;
+    }
+    .result-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    .stat-value {
+        font-size: 28px;
+    }
+    .process-btn {
+        padding: 15px 30px;
+        font-size: 16px;
+        min-width: 200px;
+    }
+    header {
+        padding: 0 20px;
+    }
+    .footer .wrapper {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+    .footer_wrapper_year,
+    .footer_wrapper_icons {
+        margin-bottom: 15px;
+    }
+}
